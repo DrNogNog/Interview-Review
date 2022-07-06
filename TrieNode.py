@@ -1,6 +1,3 @@
-from sympy import false
-
-
 class TrieNode:
     def __init__(self):
         self.child = {}
