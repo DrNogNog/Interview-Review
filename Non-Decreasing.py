@@ -24,3 +24,9 @@ class Solution:
                 nums[i+1] = nums[i]
             changed = True
         return True
+
+# Asymptotic - Limit (like in calculus) 
+# Big Oh /Worst Case Asymptotic Upper Bound - O(nums)
+# Big Omega/Best Case - O(1)
+# Big Theta/Best of All Worst Case - O(n)
+# Space Complexity - O(1)
