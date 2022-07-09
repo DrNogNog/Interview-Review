@@ -13,4 +13,5 @@ class Solution:
             res += (char * count)
         return res
 
-# O(n
+# O(n^2) 
+# space complexity: O(1)
