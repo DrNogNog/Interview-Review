@@ -13,5 +13,5 @@ class Solution:
             res += (char * count)
         return res
 
-# O(n^2) 
+# time complexity: O(n^2) 
 # space complexity: O(1)
