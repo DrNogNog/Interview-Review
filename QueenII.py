@@ -2,7 +2,7 @@
 # You cannot place a queen in the same row
 # If you cannot make a solution, you go from the start and place another queen
 
-class SOlution:
+class Solution:
     def totalNQueens(self, n: int) -> int:
         col = set()
         posDiagonal = set() # (r + c)
