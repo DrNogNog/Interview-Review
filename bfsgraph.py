@@ -1,34 +1,36 @@
-graph = {}
-graph["you"] = ["alice", "bob", "claire"]
-graph["bob"] = ["anuj", "peggy"]
-graph["alice"] = ["peggy"]
-graph["claire"] = ["thom", "jonny"]
-graph["anuj"] = []
-graph["peggy"] = []
-graph["thom"] = []
-graph["jonny"] = []
-#print(graph)
-#undirected graph
-
-from collections import deque
-
-#search_queue += graph["bob"]
-#print(search_queue)
-#while queue isn't empty
-def person_is_seller(name):
-    return name[-1] == 'm'
-def queue():
-    search_queue = deque()
-    search_queue += graph["you"] 
-    ive_searched = []
-    while search_queue:
-        person = search_queue.popleft() #grabs first person off queue
-        if not person in ive_searched:
-            if person_is_seller(person):
-                print   (person + " is a mango seller!")
-                return True
-            else:
-                search_queue += graph[person]
-    return False
-# Basically O(V+E) or O(n) in array terms
-print(queue())
+from collections import defaultdict
+class Solution:
+    def largestTimeFromDigits(self, arr: List[int]) -> str:
+        if (1 not in arr) and (0 not in arr) and (2 not in arr):
+            return ""
+        dictionary = defaultdict(list)
+        ans = ""
+        if 2 in arr:
+            dictionary[2] = []
+            x = arr.index(2)
+            if x != 0:
+                dictionary[2].append(arr[0])
+            if x != 1:
+                dictionary.add(2,arr[1])
+            if x != 2:
+                dictionary[2].append(arr[2])
+            if x != 3:
+                dictionary[2].append(arr[3])
+            d = dictionary[2]
+            if 3 in d:
+                dictionary[2].remove(3)
+                x,y = dictionary[2]
+                if x > y and x <= 5:
+                    ans = ans + "2" + "3" + ":" + str(x) + str(y)
+                else:
+                    ans = ans + "2" + "3" + ":" + str(y) + str(x)
+                return ans
+            #2,1,0
+                
+        elif 1 in arr:
+            arr.index(1)
+        elif 0 in arr:
+            arr.index(0)
+        
+        
+        
